@@ -13,3 +13,19 @@
     align-items: center;
   }
 }
+
+.result{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  .MuiContainer-root.MuiContainer-maxWidthLg{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

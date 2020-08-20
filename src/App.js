@@ -34,8 +34,8 @@ const App = () => {
           shuffle restaurants 🔀
         </Button>}
       </div> : <div></div>}
-      {showResult && <div className="wrapper">
-        <Typography gutterBottom variant="h3" component="h3">
+      {showResult && <div className="result">
+        <Typography gutterBottom variant="h4" component="h4">
           The Winner Is 🥳
           </Typography>
         <SelectedRestaurant />
