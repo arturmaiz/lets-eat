@@ -1,0 +1,18 @@
+$n: 4;
+
+.MuiAvatar-root.MuiAvatar-circle.MuiAvatarGroup-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.hide {
+  animation: hide 2s forwards;
+  @keyframes hide {
+    0%{
+      transform: scale(1.4) rotate(0deg);
+    }
+    100% {
+      transform: scale(0) rotate(3600deg);
+    }
+  }
+}

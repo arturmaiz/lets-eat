@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
+import Typography from '@material-ui/core/Typography';
+
+import Board from "./components/Board/Board";
+import SelectedRestaurant from "./components/SelectedRestaurant/SelectedRestaurant";
+
+import "./App.scss";
+
+const App = () => {
+  const [selectedRestaurant, setSelectedRestaurant] = useState([]);
+  const [shuffle, setShuffle] = useState(false);
+  const [showResult, setShowResult] = useState(false);
+
+  const handleShuffle = () => {
+    setShuffle(true);
+
+    setTimeout(() => {
+      setShowResult(true);
+      setSelectedRestaurant(null);
+    }, 2000);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      {selectedRestaurant != null ? <div className="wrapper">
+        <Typography gutterBottom variant="h3" component="h3">
+          Let's Eat 🍽
+      </Typography>
+        < Board selectedRestaurant={selectedRestaurant} shuffle={shuffle} />
+        {shuffle ? <div></div> : <Button onClick={handleShuffle} variant="contained" color="primary">
+          shuffle restaurants 🔀
+        </Button>}
+      </div> : <div></div>}
+      {showResult && <div className="wrapper">
+        <Typography gutterBottom variant="h3" component="h3">
+          The Winner Is 🥳
+          </Typography>
+        <SelectedRestaurant />
+      </div>}
+    </Container>
   );
-}
+};
 
 export default App;
