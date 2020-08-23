@@ -2,7 +2,7 @@
 
 # 👉🏽 [Demo](http://ani-raev.netlify.com/)
 
-This app built with React.js. 
+This app built with React Hooks. 
 Developed with ❤️ by [Artur Maizelev](https://www.arturmaiz.com/). 
 If you love my project please star ⭐️ my repo!
 
@@ -14,7 +14,7 @@ git clone https://github.com/arturmaiz/lets-eat.git
 ```
 2. Get in the project folder
 ```shell
-cd Soundcloud-App
+cd lets-eat
 ```
 3. Install dependencies via npm or yarn
 ```shell
